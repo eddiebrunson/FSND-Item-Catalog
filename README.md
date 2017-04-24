@@ -48,7 +48,7 @@ ___
 
 ## Screenshots
 
-### tournament_test.py passing
+### Item Catalog Homescreen 
 
 ![](SS_home.png)  
 
