@@ -1,0 +1,94 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Movie Catalog</title>
+    <meta name="description" content="Udacity Fullstack Item Catalog Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-red.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+    window.mdc.autoInit();
+    </script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Add your site or application content here -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--flex-drawer mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <p><i class="material-icons">theaters</i> Movie Catalog</p>
+                <div class="mdl-layout-spacer"></div>
+                {%if 'username' not in session %}
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('showLogin')}}">
+                      Login
+                    </a> {% else %}
+                <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('logout')}}">
+                      Logout
+                    </a> {% endif %}
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">Movie Genres</span>
+            <div class="mdl-layout--drawer__toolbar-spacer"></div>
+            <nav class="mdl-navigation">
+                {% for genre in genres %}
+                <a class="mdl-navigation__link" href="{{url_for('showMovies', genre_id = genre.id)}}">{{genre.name}}</a> {% endfor %}
+            </nav>
+        </div>
+        <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="container">
+                    {%if 'username' in session %}
+                    <a id="fab" href="{{url_for('newGenre')}}" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                        <i class="material-icons">add</i>
+                    </a> Click to add a movie genre
+                    <!--Add new movie button copy and paste above change url_for newMovie issue is genre id in url mapping may have to take it out.  -->
+                    {% endif %} {% block content %} {% endblock %}
+                </div>
+        </main>
+        </div>
+    </div>
+</body>
+<!-- <p>Welcome to the Movie Catalog</p> -->
+<script tyep="text/javascript" src="/static/js/bootstrap.youtubepopup.min.js" </script>
+< script type = "text/javascript" >
+    $(function() {
+        $(".youtube").YouTubeModal({
+            autoplay: 0,
+            width: 640,
+            height: 480
+        });
+    });
+</script>
+<script>
+window.jQuery || document.write('<script src="js/vendor/jquery-2.2.1.min.js"><\/script>')
+</script>
+<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+<script>
+window.ga = function() {
+    ga.q.push(arguments)
+};
+ga.q = [];
+ga.l = +new Date;
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('send', 'pageview')
+</script>
+<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+</html>

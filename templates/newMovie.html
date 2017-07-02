@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>New Movie</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-red.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//apis.google.com/js/platform.js?onload=start"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="mdl-layout mdl-js-layout mdl-layout--flex-drawer mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <div class="mdl-layout-spacer"></div>
+                    {%if 'username' not in session %}
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('login')}}">
+            Login
+          </a> {% else %}
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('logout')}}">
+            Logout
+          </a> {% endif %}
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="mdl-grid typography--text-center">
+                        <header class="mdl-cell mdl-cell--12-col">
+                            <h3>Add a new movie</h3>
+                            <a href="http://www.imdb.com/" target="_blank">Click here to get  moive data!</a>
+                        </header>
+                    </div>
+                    <div class="demo-container mdl-grid">
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                        <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                            <h3>Create a new Movie</h3>
+                            <form action="#" method="post" autocomplete="on">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="youtube_url" type="text" id="youtube_url" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="youtube_url">Youtube URL...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="name" type="text" id="name">
+                                    <label class="mdl-textfield__label" for="name">Movie Name...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="release_date" type="text" id="desription" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="release_date">Release Date</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="MPAA_film_rating" type="text" id="MPAA_film_rating" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="MPAA_film_rating">MPAA Film Rating...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="runtime" type="text" id="genre" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="runtime">Runtime...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="desription" type="text" id="desription" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="desription">Description...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="IMDb_rating" type="text" id="IMDb_rating" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="IMDb_rating">IMdb Rating...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="gross" type="text" id="gross" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="gross">Gross Earnings...</label>
+                                </div>
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="genre" type="text" id="genre" autocomplete="name">
+                                    <label class="mdl-textfield__label" for="genre">Genre...</label>
+                                </div>
+                                <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                    Add Movie
+                                </button>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+        </main>
+    </div>
+    </div>
+</body>
+
+</html>

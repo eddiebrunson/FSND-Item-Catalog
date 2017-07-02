@@ -2,16 +2,16 @@
 
 ## Project 5 Overview
 
-![](http://progressed.io/bar/30?title=Progress)
+![](http://progressed.io/bar/80?title=Progress)
 
 The objective of this project was to create a web application that provides a list of items within a variety of categories and integrate third party user registration and authentication. 
 
-The project consists of four parts to complete:
+The project consists of four parts:
 
 1. the HTML(structure of the pages)
 2. the CSS (the style of the pages)
 3. the Flask Application (to put it online)
-	* it must include authentication.authorization to allow users to login before making changes
+	* it includes authentication & authorization to allow users to login before making changes
 4. the database (to store and organize the information)
 
 ___
@@ -38,7 +38,7 @@ ___
 
 3. To browse the application:
 
-* Open browser and enter `http://localhost:8000/`
+* Open browser and enter `http://localhost:5000/`
 
 
 
@@ -48,7 +48,7 @@ ___
 
 ## Screenshots
 
-### Item Catalog Homescreen 
+### Item Catalog 
 
 ![](SS_home.png)  
 
@@ -64,5 +64,6 @@ ___
 * [Udacity's Fullstack Foundations course](https://www.udacity.com/course/full-stack-foundations--ud088)
 * [Udacity's Authentication & Authorization: OAuth course](https://www.udacity.com/course/authentication-authorization-oauth--ud330)
 * [Item Catalog: Getting Started Guide](https://docs.google.com/document/d/1jFjlq_f-hJoAZP8dYuo5H3xY62kGyziQmiv9EPIA7tM/pub?embedded=true)
-
+*[Material Design](https://material.io)
+*[SQLAlchemy Image-Attach](http://sqlalchemy-imageattach.readthedocs.io/en/1.0.0/guide/context.html)
 

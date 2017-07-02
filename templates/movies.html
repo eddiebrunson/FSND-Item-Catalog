@@ -1,0 +1,33 @@
+{% extends "main.html" %} {% block content %} {% include "header.html" %} {% include "publicgenres.html" %}
+<div class="mdl-grid typography--text-center">
+    <main class="container">
+        <h3>Welcome!</h3>
+        <!-- <p>Below are movies and it's information:</p> -->
+        {%if 'username' not in session %}
+        <p>Please login in and post your own movie!</p>
+        {% endif %}
+    </main>
+</div>
+<div class="mdl-grid">
+    {% for movie in movies %}
+    <div class="mdl-cell mdl-cell--8-col mdl-cell--6-col-desktop mdl-card mdl-shadow--2dp card-movie">
+        <div class="mdl-card__title">
+            <h4 class="mdl-card__title-text">{{movie.name}}</h4>
+            <i class="material-icons">star_rate</i>
+            <!-- <i class="material-icons">thumb_up</i> -->
+        </div>
+        <div class="mdl-card__supporting-text">{{movie.cover_url}}</div>
+        <div class="mdl-card__supporting-text">Release Date: {{movie.release_date}}</div>
+        <div class="mdl-card__supporting-text">Film Rating: {{movie.MPAA_film_rating}}</div>
+        <div class="mdl-card__supporting-text">Runtime: {{movie.runtime}}</div>
+        <div class="mdl-card__supporting-text">Gross Earnings: {{movie.gross}}</div>
+        <div class="mdl-card__supporting-text">IMDb rating: {{movie.IMDb_rating}}</div>
+        <div class="mdl-card__supporting-text">{{movie.description}}</div>
+        <div class="mdl-card__actions mdl-card--border">
+            <a class=" youtube mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{movie.youtube_url}}" target="_blank">Watch</a>
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{url_for('editMovie', genre_id = movie.genre_id, movie_id = movie.id)}}">Edit</a>
+            <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="{{url_for('deleteMovie', genre_id = movie.genre_id, movie_id = movie.id)}}">Delete</a>
+        </div>
+    </div>
+    {% endfor %} {% endblock %}
+</div>

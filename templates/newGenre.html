@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Movie Catalog</title>
+    <meta name="description" content="Udacity Fullstack Item Catalog Project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700' rel='stylesheet' type='text/css'>
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.blue-red.min.css">
+    <script src="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<style type="text/css">
+h2,
+h3 {
+    margin: 0px 0px;
+    padding-top: 0px;
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="mdl-layout mdl-js-layout mdl-layout--flex-drawer mdl-layout--fixed-header">
+            <header class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <div class="mdl-layout-spacer"></div>
+                    {%if 'username' not in session %}
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('login')}}">
+					  Login
+					</a> {% else %}
+                    <a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" href="{{url_for('logout')}}">
+					  Logout
+					</a> {% endif %}
+                </div>
+            </header>
+            <main class="mdl-layout__content">
+                <div class="page-content">
+                    <div class="mdl-grid typography--text-center">
+                        <header class="mdl-cell mdl-cell--12-col">
+                            <h3>New genre</h3>
+                        </header>
+                    </div>
+                    <div class="demo-container mdl-grid">
+                        <div class="mdl-cell mdl-cell--2-col mdl-cell--hide-tablet mdl-cell--hide-phone"></div>
+                        <div class="demo-content mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--8-col">
+                            <h3>Create a new genre</h3>
+                            <form action="#" method="post" autocomplete="on">
+                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                    <input class="mdl-textfield__input" name="name" type="text" id="name" maxlength="100">
+                                    <label class="mdl-textfield__label" for="name">Genre Name...</label>
+                                </div>
+                                <div>
+                                    <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+                                        <span class="glyphicon glyphicon-film" aria-hidden="true"></span> Add Genre
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
