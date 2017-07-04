@@ -38,7 +38,7 @@ ___
 
 3. To browse the application:
 
-* Open browser and enter `http://localhost:5000/`
+* Open browser and enter `http://localhost:5000/genre/`
 
 
 
