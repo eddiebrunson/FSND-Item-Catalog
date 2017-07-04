@@ -66,4 +66,5 @@ ___
 * [Item Catalog: Getting Started Guide](https://docs.google.com/document/d/1jFjlq_f-hJoAZP8dYuo5H3xY62kGyziQmiv9EPIA7tM/pub?embedded=true)
 * [Material Design](https://material.io)
 * [SQLAlchemy Image-Attach](http://sqlalchemy-imageattach.readthedocs.io/en/1.0.0/guide/context.html)
+* [Fellow Student Past project](https://github.com/Sesshoumaru404/catalog)
 
