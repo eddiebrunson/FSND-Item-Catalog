@@ -2,7 +2,7 @@
 
 ## Project 5 Overview
 
-![](http://progressed.io/bar/80?title=Progress)
+![](http://progressed.io/bar/100?title=Progress)
 
 The objective of this project was to create a web application that provides a list of items within a variety of categories and integrate third party user registration and authentication. 
 
@@ -38,7 +38,7 @@ ___
 
 3. To browse the application:
 
-* Open browser and enter `http://localhost:5000/genre/`
+* Open browser and enter `http://localhost:5000/`
 
 
 
