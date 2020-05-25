@@ -2,7 +2,7 @@
 
 ## Project 5 Overview
 
-![](http://progressed.io/bar/100?title=Progress)
+![progress](https://progress-bar.dev/100/?title=progress)
 
 The objective of this project was to create a web application that provides a list of items within a variety of categories and integrate third party user registration and authentication. 
 
